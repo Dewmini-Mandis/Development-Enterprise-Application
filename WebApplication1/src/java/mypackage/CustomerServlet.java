@@ -75,11 +75,15 @@ public class CustomerServlet extends HttpServlet {
         
         String name= request.getParameter("cname");
         String email=request.getParameter("email");
+        String[] facility=request.getParameterValues("fac");
         
         PrintWriter out= response.getWriter();
         out.println("Customer Name: " +name);
         out.println("Email: " +email);
-       
+        out.println("Facilities: ");
+        for(String facility1: facility){
+            out.println("  " +facility1);
+        }
         //processRequest(request, response);
     }
 
